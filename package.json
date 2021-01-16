@@ -1,0 +1,22 @@
+{
+  "name": "weathervibe",
+  "version": "1.0.0",
+  "description": "A website that allows you to build a spotify playlist based on the weather",
+  "main": "spotify-auth.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damanjitg/weathervibe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damanjitg/weathervibe/issues"
+  },
+  "homepage": "https://github.com/damanjitg/weathervibe#readme",
+  "dependencies": {
+    "spotify-web-api-js": "^1.5.1"
+  }
+}
