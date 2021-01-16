@@ -16,6 +16,8 @@ window.location.hash = "";
 
 // Set token
 authToken = hash.access_token;
+console.log(authToken);
+
 
 spotifyApi.getArtistAlbums("5K4W6rqBFWDnAN6FQUkS6x", function (err, data) {
   if (err) {

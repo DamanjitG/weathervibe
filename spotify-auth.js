@@ -23,7 +23,7 @@ window.authSpotify = function () {
   const authEndpoint = "https://accounts.spotify.com/authorize";
   const clientId = "2c059958c8a548a69d95f751753097b6";
   const redirectUri = "https://damanjitg.github.io/weathervibe/callback.html";
-  const scopes = ["user-read-email"];
+  const scopes = ["playlist-modify-public","playlist-modify-private","user-read-private"];
 
   // If there is no token, redirect to Spotify authorization
   if (!authToken) {
