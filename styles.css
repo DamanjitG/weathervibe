@@ -4,8 +4,8 @@ body {
 
 .blob {
     background-color: white;
-    align-self: center;
     width : 50%;
-    height :50%;
-    padding-top: 10%;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
