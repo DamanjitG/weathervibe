@@ -1,7 +1,7 @@
 {
   "name": "weathervibe",
   "version": "1.0.0",
-  "description": "A website that allows you to build a spotify playlist based on the weather",
+  "description": "A website that builds a Spotify playlist for you, based on the weather at your location.",
   "main": "spotify-auth.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
