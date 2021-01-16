@@ -17,7 +17,7 @@ function callLocation(position){
     long = Math.round(position.coords.longitude * 100) / 100;
     console.log(lat);
     console.log(long);
-    url = "http://www.7timer.info/bin/api.pl?lon=" + long.toString() + "&lat=" + lat.toString() + "&product=civil&output=json"
+    url = "https://seven-timer-https-proxy.herokuapp.com?lon=" + long.toString() + "&lat=" + lat.toString() + "&product=civil&output=json"
     
     fetch(url)
     .then(res => res.json())
