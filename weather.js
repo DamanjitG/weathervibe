@@ -5,8 +5,7 @@ var url;
 
 function getLocation() {
   if (navigator.geolocation) {
-    lat = Math.round(navigator.geolocation.getCurrentPosition(coords.latitude)*100) /100;
-    long = Math.round(navigator.geolocation.getCurrentPosition(coords.longitude)*100) /100;
+    navigator.geolocation.getCurrentPosition(callLocation);
     url = "http://www.7timer.info/bin/api.pl?lon=" + str(long) + "&" + "lat=" + str(lat) + "&product=civil&output=json"
     fetch('url')
     .then(res => res.json())
@@ -17,4 +16,9 @@ function getLocation() {
     else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
     }
+}
+
+function callLocation(position){
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
 }
