@@ -1,5 +1,3 @@
-var Spotify = require("spotify-web-api-js");
-var spotifyApi = new Spotify();
 let authToken;
 
 const hash = window.location.hash
@@ -13,16 +11,18 @@ const hash = window.location.hash
     return initial;
   }, {});
 window.location.hash = "";
-
-// Set token
 authToken = hash.access_token;
-console.log(authToken);
 
-
-spotifyApi.getArtistAlbums("5K4W6rqBFWDnAN6FQUkS6x", function (err, data) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(data);
-  }
-});
+// Test: calling artist information for kanye west
+fetch('https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x', {
+    method: 'GET', headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + authToken
+    }
+})
+    .then((response) => {
+        console.log(response.json().then(
+            (data) => { console.log(data) }
+        ));
+    });
