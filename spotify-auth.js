@@ -1,13 +1,10 @@
-let Spotify = require('spotify-web-api-js');
-let s = new Spotify;
 let authToken;
 
-window.authSpotify = function() {
+window.authSpotify = function () {
   if (authToken) {
     return;
   }
   // Get the hash of the url
-  console.log('auth has begun');
   const hash = window.location.hash
     .substring(1)
     .split("&")
@@ -26,7 +23,7 @@ window.authSpotify = function() {
   const authEndpoint = "https://accounts.spotify.com/authorize";
   const clientId = "2c059958c8a548a69d95f751753097b6";
   const redirectUri = "https://damanjitg.github.io/weathervibe/callback.html";
-  const scopes = ['user-read-email'];
+  const scopes = ["playlist-modify-public","playlist-modify-private","user-read-private"];
 
   // If there is no token, redirect to Spotify authorization
   if (!authToken) {
@@ -34,6 +31,4 @@ window.authSpotify = function() {
       "%20"
     )}&response_type=token`;
   }
-  spotifyApi.setAccessToken(authToken);
-  document.getElementById('spotifyAuthButton').style.display='none';
-}
+};
