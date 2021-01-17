@@ -305,4 +305,4 @@ function generatePlayList(weatherData) {
       })
     );
   });
-}, 4000)}
+}, 6000)}
