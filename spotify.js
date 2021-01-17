@@ -39,6 +39,6 @@ function normalizeWeatherAttribute(min, max, input) {
         return 1;
     }
     else {
-        return ()
+        return ((input - min) / (max - min))
     }
 }
