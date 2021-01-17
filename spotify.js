@@ -1,5 +1,6 @@
 let authToken;
 
+console.log(weather);
 const hash = window.location.hash
   .substring(1)
   .split("&")
@@ -26,3 +27,15 @@ fetch('https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x', {
             (data) => { console.log(data) }
         ));
     });
+
+function normalizeWeatherAttribute(min, max, input) {
+    if (input < min) {
+        return 0;
+    }
+    else if (input > min) {
+        return 1;
+    }
+    else {
+        return ()
+    }
+}
