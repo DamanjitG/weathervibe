@@ -1,11 +1,13 @@
 var x = document.getElementById("demo");
 var lat,long;
 var url;
-var weather;
+var weather = 2;
 
-function getLocation() {
+function getLocation(button1) {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(callLocation);
+    button1.innerHTML = 'Generate playlist'
+    button1.onClick = printx(10,button1);
      }
     else { 
     x.innerHTML = "Geolocation is not supported by this browser.";

@@ -26,3 +26,7 @@ fetch('https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x', {
             (data) => { console.log(data) }
         ));
     });
+
+function printx(y,button1){
+  console.log(y);
+}
