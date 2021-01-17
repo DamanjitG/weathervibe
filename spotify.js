@@ -28,6 +28,9 @@ fetch('https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x', {
         ));
     });
 
+function printx(y,button1){
+  console.log(y);
+
 function normalizeWeatherAttribute(min, max, input) {
     if (input < min) {
         return 0;
