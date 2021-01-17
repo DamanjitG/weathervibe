@@ -1,5 +1,5 @@
 let authToken;
-let recommendationJson;
+let recommendationTracks;
 let userid;
 let playlistid;
 // genre dicitionary lists are in artists, genres, tracks form
@@ -235,7 +235,15 @@ function generatePlayList(weatherData) {
   ).then((response) => {
     console.log(
       response.json().then((data) => {
-        recommendationJson = data;
+        let arr = [];
+        let i;
+        for (i = 0; i < 20; i++) {
+            arr.push(data.tracks[i].uri)
+        }
+        console.log(arr)
+        recommendationTracks = JSON.stringify({
+            "uris" : arr
+        })
         console.log(data);
       })
     );
@@ -257,29 +265,38 @@ function generatePlayList(weatherData) {
     );
   });
   // Create playlist
-  fetch(("https://api.spotify.com/v1/users/"+userid+"/playlists"), {
+  setTimeout(() => {
+    fetch("https://api.spotify.com/v1/users/" + userid + "/playlists", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + authToken,
+      },
+      body: JSON.stringify({
+        'name': "Weathervibe Playlist",
+        'description': "A playlist created by Weathervibe",
+        'public': true
+      })
+    }).then((response) => {
+      console.log(
+        response.json().then((data) => {
+          playlistid = data.id;
+          console.log(data);
+        })
+      );
+    });
+  }, 2000);
+  // Adding to playlist
+  setTimeout(() => {
+      fetch("https://api.spotify.com/v1/playlists/" + playlistid + "/tracks", {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
       Authorization: "Bearer " + authToken,
     },
-  }).then((response) => {
-    console.log(
-      response.json().then((data) => {
-        playlistid = data.id;
-        console.log(data)
-      })
-    );
-  });
-  // Adding to playlist
-  fetch(("https://api.spotify.com/v1/playlists/"+playlistid+"/tracks"), {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + authToken,
-    }
+    body: recommendationTracks
   }).then((response) => {
     console.log(
       response.json().then((data) => {
@@ -288,4 +305,4 @@ function generatePlayList(weatherData) {
       })
     );
   });
-}
+}, 4000)}
