@@ -22,15 +22,9 @@ function callLocation(position){
     fetch(url)
     .then(res => res.json())
     .then((out) => {
-        console.log(out);
         console.log(out.dataseries[2]);
         weather = out.dataseries[2];
-        getSeed(out.dataseries[2]);
     })
     .catch(err => console.error(err)); 
     
-}
-
-function getSeed(weatherObject){
-    console.log(weatherObject.timepoint);
 }
