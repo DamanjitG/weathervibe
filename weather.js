@@ -26,5 +26,4 @@ function callLocation(position){
         weather = out.dataseries[2];
     })
     .catch(err => console.error(err)); 
-    
 }

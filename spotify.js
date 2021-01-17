@@ -26,3 +26,5 @@ spotifyApi.getArtistAlbums("5K4W6rqBFWDnAN6FQUkS6x", function (err, data) {
     console.log(data);
   }
 });
+
+console.log(weather);
