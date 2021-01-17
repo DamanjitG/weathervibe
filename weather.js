@@ -8,7 +8,7 @@ function getLocation(button1) {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(callLocation);
     button1.innerHTML = 'Generate playlist'
-    button1.onClick = printx(10,button1);
+    setTimeout(() => {  button1.onClick = printx(10,button1) }, 10000);;
 
      }
     else { 
