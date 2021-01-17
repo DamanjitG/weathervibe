@@ -2,6 +2,7 @@ let authToken;
 let recommendationTracks;
 let userid;
 let playlistid;
+let playlistUrl;
 // genre dicitionary lists are in artists, genres, tracks form
 let genreDict = {
   clearday: [
@@ -146,7 +147,6 @@ let genreDict = {
   ],
 };
 
-console.log(weather);
 const hash = window.location.hash
   .substring(1)
   .split("&")
@@ -159,22 +159,6 @@ const hash = window.location.hash
   }, {});
 window.location.hash = "";
 authToken = hash.access_token;
-
-// Test: calling artist information for kanye west
-fetch("https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x", {
-  method: "GET",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-    Authorization: "Bearer " + authToken,
-  },
-}).then((response) => {
-  console.log(
-    response.json().then((data) => {
-      console.log(data);
-    })
-  );
-});
 
 function printx(y, button1) {
   console.log(y);
@@ -282,6 +266,8 @@ function generatePlayList(weatherData) {
       console.log(
         response.json().then((data) => {
           playlistid = data.id;
+          playlistUrl = data.external_urls.spotify;
+          console.log(playlistUrl);
           console.log(data);
         })
       );
@@ -302,6 +288,9 @@ function generatePlayList(weatherData) {
       response.json().then((data) => {
         playlistid = data.id;
         console.log(data);
+        document.getElementById('lander').innerHTML = (playlistUrl);
+        document.getElementById('lander').href = (playlistUrl);
+        document.getElementById('lander2').innerHTML = 'Enjoy your playlist!'
       })
     );
   });

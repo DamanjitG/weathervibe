@@ -5,12 +5,12 @@ var weather;
 
 
 function getLocation(button1) {
+  
   if (navigator.geolocation) {
+    document.getElementById('mainButton').style.visibility = 'hidden';
+    document.getElementById('lander').innerHTML = "Loading..."
     navigator.geolocation.getCurrentPosition(callLocation);
-    button1.innerHTML = 'Generate playlist'
-    setTimeout(() => {  button1.onClick = generatePlayList(weather) }, 5000);;
-
-     }
+    setTimeout(() => {button1.onClick = generatePlayList(weather) }, 5000);;}
     else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
     }
@@ -33,6 +33,3 @@ function callLocation(position){
     
 }
 
-function hide(elmnt){
-    elmnt.style.visibility = hidden;
-}

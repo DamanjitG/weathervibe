@@ -3,8 +3,6 @@
 <head>  
     <title>WeatherVibe</title>
     <link rel = "stylesheet" href="styles.css">
-    <script src="weather.js"></script>
-    <script src="spotify.js"></script>
 </head>
 <body>
     <div class="bgimg">
@@ -12,9 +10,15 @@
             <div class= "text">
                 <h1>Welcome to WeatherVibe!</h1>
                 <p>If you allow this website to access your location, it will generate a Spotify playlist for you based on the weather and time of day of your current location.</p>
-                <button onclick="getLocation(this)">Authorize Location Info</button>
+                <button onclick="getLocation(this)" id="mainButton">Authorize Location Info and Generate Playlist</button>
+                <p>Your playlist link will appear here once it is generated.</p>
+                <a id="lander"></a>
+                <p id="lander2"></p>
+                <p>By: Damanjit Gill & Aryan Rastogi</p>
             </div>
         </div>
     </div>
 </body>
+<script src="weather.js"></script>
+<script src="spotify.js"></script>
 </html> 
