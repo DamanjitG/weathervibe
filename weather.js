@@ -3,9 +3,10 @@ var lat,long;
 var url;
 var weather;
 
-function getLocation() {
+function getLocation(button) {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(callLocation);
+    button.style.visibility = "hidden";
      }
     else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
@@ -27,4 +28,8 @@ function callLocation(position){
     })
     .catch(err => console.error(err)); 
     
+}
+
+function hide(elmnt){
+    elmnt.style.visibility = hidden;
 }
