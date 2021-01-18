@@ -272,7 +272,7 @@ function generatePlayList(weatherData) {
         })
       );
     });
-  }, 2000);
+  }, 7000);
   // Adding to playlist
   setTimeout(() => {
       fetch("https://api.spotify.com/v1/playlists/" + playlistid + "/tracks", {
@@ -294,4 +294,4 @@ function generatePlayList(weatherData) {
       })
     );
   });
-}, 6000)}
+}, 11000)}
