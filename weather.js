@@ -10,7 +10,7 @@ function getLocation(button1) {
     document.getElementById('mainButton').style.visibility = 'hidden';
     document.getElementById('lander').innerHTML = "Loading..."
     navigator.geolocation.getCurrentPosition(callLocation);
-    setTimeout(() => {button1.onClick = generatePlayList(weather) }, 5000);;}
+    setTimeout(() => {button1.onClick = generatePlayList(weather) }, 10000);;}
     else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
     }
