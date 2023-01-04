@@ -7,4 +7,4 @@ The weather API we use is [7timer.info](http://7timer.info/index.php?lang=en); h
 
 This project was created during Hack the North 2020++.
 
-
+UPDATE: As of January 2023, this project is unfortunately not functional. This is due to Heroku discontinuing their free tier of service; the proxy above that we used consequently is non-functioning. 
